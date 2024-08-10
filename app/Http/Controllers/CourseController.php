@@ -54,7 +54,8 @@ class CourseController extends Controller
 
     public function destroy(Course $course)
     {
+        $title = $course->title;
         $course->delete();
-        return redirect()->route('courses.index')->with('success', 'Kursus "' . $course->title . '" berhasil dihapus!');
+        return redirect()->route('courses.index')->with('success', 'Kursus "' . $title . '" berhasil dihapus!');
     }
 }

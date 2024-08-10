@@ -56,7 +56,8 @@ class CourseMaterialController extends Controller
 
     public function destroy(CourseMaterial $material)
     {
+        $title = $material->title;
         $material->delete();
-        return redirect()->route('courseMaterials.index')->with('success', 'Materi "' . $material->title . '" berhasil dihapus!');
+        return redirect()->route('courseMaterials.index')->with('success', 'Materi "' . $title . '" berhasil dihapus!');
     }
 }
