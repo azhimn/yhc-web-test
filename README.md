@@ -2,7 +2,7 @@
 - [PHP](https://www.php.net/) >= 8.2
 - Webserver of choice *([Apache](https://apache.org) 2.4 used during development)*
 - Database of choice *([MySQL](https://www.mysql.com/) 8.0 used during development)*
-- [Composer](https://getcomposer.org) >= 2.x
+- [Composer](https://getcomposer.org) >= 2.0
 
 ## Installation
 
