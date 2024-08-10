@@ -1,15 +1,15 @@
 @extends('adminlte::page')
 
-@section('title', 'Material | Course Manager')
+@section('title', 'Materi | Course Manager')
 
 @section('content_header')
     <div class="d-flex">
         <div>
             <span class="d-flex flex-row">
-                <h4>Material</h4>
-                <h5 class="text-muted ml-1 mt-auto">- Edit Material</h5>
+                <h4>Materi</h4>
+                <h5 class="text-muted ml-1 mt-auto">- Edit Materi</h5>
             </span>
-            <p class="text-muted mb-0">Sesuaikan material ini sesuai keinginan Anda!</p>
+            <p class="text-muted mb-0">Sesuaikan materi ini sesuai keinginan Anda!</p>
         </div>
     </div>
 @stop
