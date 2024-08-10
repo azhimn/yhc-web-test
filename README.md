@@ -44,7 +44,7 @@ You can login by using the following credentials.
 
 Email
 ```
-ardinug@mail.com
+ardi@mail.com
 ```
 Password
 ```
