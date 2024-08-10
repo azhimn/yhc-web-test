@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use HTMLPurifier;
+use HTMLPurifier_Config;
 use Illuminate\Http\Request;
 use App\Models\CourseMaterial;
 
@@ -32,7 +34,13 @@ class CourseMaterialController extends Controller
             'course_id' => 'required|integer'
         ]);
 
-        $material = CourseMaterial::create($request->all());
+        $material = CourseMaterial::create([
+            'title' => $request->title,
+            'description' => $this->purifier->purify($request->description),
+            'embed_link' => $request->embed_link,
+            'course_id' => $request->course_id,
+        ]);
+
         return redirect()->route('materials.index')->with('success', 'Materi "' . $material->title . '" berhasil dibuat!');
     }
 
@@ -50,7 +58,13 @@ class CourseMaterialController extends Controller
             'course_id' => 'required|integer'
         ]);
 
-        CourseMaterial::create($request->all());
+        $material->update([
+            'title' => $request->title,
+            'description' => $this->purifier->purify($request->description),
+            'embed_link' => $request->embed_link,
+            'course_id' => $request->course_id,
+        ]);
+
         return redirect()->route('materials.index')->with('success', 'Materi "' . $material->title . '" berhasil diperbarui!');
     }
 
@@ -59,5 +73,18 @@ class CourseMaterialController extends Controller
         $title = $material->title;
         $material->delete();
         return redirect()->route('materials.index')->with('success', 'Materi "' . $title . '" berhasil dihapus!');
+    }
+
+    protected $purifier;
+
+    public function __construct()
+    {
+        $config = HTMLPurifier_Config::createDefault();
+        $this->purifier = new HTMLPurifier($config);
+    }
+
+    public function purify($html)
+    {
+        return $this->purifier->purify($html);
     }
 }

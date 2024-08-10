@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use HTMLPurifier;
+use HTMLPurifier_Config;
 use App\Models\Course;
 use Illuminate\Http\Request;
 
@@ -31,7 +33,12 @@ class CourseController extends Controller
             'duration' => 'required|integer|max:1000',
         ]);
 
-        $course = Course::create($request->all());
+        $course = Course::create([
+            'title' => $request->title,
+            'description' => $this->purifier->purify($request->description),
+            'duration' => $request->duration,
+        ]);
+
         return redirect()->route('courses.index')->with('success', 'Kursus "' . $course->title . '" berhasil dibuat!');
     }
 
@@ -48,7 +55,12 @@ class CourseController extends Controller
             'duration' => 'required|integer|max:1000',
         ]);
 
-        Course::create($request->all());
+        $course->update([
+            'title' => $request->title,
+            'description' => $this->purifier->purify($request->description),
+            'duration' => $request->duration,
+        ]);
+
         return redirect()->route('courses.index')->with('success', 'Kursus "' . $course->title . '" berhasil diperbarui!');
     }
 
@@ -57,5 +69,18 @@ class CourseController extends Controller
         $title = $course->title;
         $course->delete();
         return redirect()->route('courses.index')->with('success', 'Kursus "' . $title . '" berhasil dihapus!');
+    }
+
+    protected $purifier;
+
+    public function __construct()
+    {
+        $config = HTMLPurifier_Config::createDefault();
+        $this->purifier = new HTMLPurifier($config);
+    }
+
+    public function purify($html)
+    {
+        return $this->purifier->purify($html);
     }
 }
