@@ -50,3 +50,17 @@ Password
 ```
 password
 ```
+
+## Screenshots
+#### Login Page
+![login](.github/images/login.png)
+#### Course Pages
+![course-index](.github/images/course-index.png)
+![course-create](.github/images/course-create.png)
+![course-edit](.github/images/course-edit.png)
+![course-delete](.github/images/course-delete.png)
+#### Material Pages
+![material-index](.github/images/material-index.png)
+![material-create](.github/images/material-create.png)
+![material-edit](.github/images/material-edit.png)
+![material-delete](.github/images/material-delete.png)
