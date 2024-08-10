@@ -2,18 +2,18 @@
 
 return [
 
-    'main_navigation' => 'MAIN NAVIGATION',
+    'main_navigation' => 'NAVIGASI UTAMA',
     'blog' => 'Blog',
-    'pages' => 'Pages',
-    'account_settings' => 'ACCOUNT SETTINGS',
-    'profile' => 'Profile',
-    'change_password' => 'Change Password',
+    'pages' => 'Halaman',
+    'account_settings' => 'PENGATURAN AKUN',
+    'profile' => 'Profil',
+    'change_password' => 'Ubah Kata Sandi',
     'multilevel' => 'Multi Level',
     'level_one' => 'Level 1',
     'level_two' => 'Level 2',
     'level_three' => 'Level 3',
-    'labels' => 'LABELS',
-    'important' => 'Important',
-    'warning' => 'Warning',
-    'information' => 'Information',
+    'labels' => 'LABEL',
+    'important' => 'Penting',
+    'warning' => 'Peringatan',
+    'information' => 'Informasi',
 ];

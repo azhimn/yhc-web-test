@@ -310,11 +310,6 @@ return [
             'route' => 'courses.index',
             'icon' => 'fas fa-fw fa-poll-h',
         ],
-        [
-            'text' => 'Pengguna',
-            'route' => 'users.index',
-            'icon' => 'fas fa-fw fa-user',
-        ],
     ],
 
     /*

@@ -9,22 +9,6 @@ use App\Models\CourseMaterial;
 
 class CourseMaterialController extends Controller
 {
-    public function index()
-    {
-        $materials = CourseMaterial::all();
-        return view('admin.material.index', compact('materials'));
-    }
-
-    public function show(CourseMaterial $material)
-    {
-        return view('admin.material.show', compact('material'));
-    }
-
-    public function create()
-    {
-        return view('admin.material.create');
-    }
-
     public function store(Request $request)
     {
         $request->validate([
