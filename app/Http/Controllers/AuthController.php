@@ -10,7 +10,7 @@ use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
-    public function showRegistrationPage()
+    public function showRegisterPage()
     {
         return view('auth.register');
     }

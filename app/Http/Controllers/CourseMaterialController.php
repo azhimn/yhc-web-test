@@ -33,7 +33,7 @@ class CourseMaterialController extends Controller
         ]);
 
         $material = CourseMaterial::create($request->all());
-        return redirect()->route('courseMaterials.index')->with('success', 'Materi "' . $material->title . '" berhasil dibuat!');
+        return redirect()->route('materials.index')->with('success', 'Materi "' . $material->title . '" berhasil dibuat!');
     }
 
     public function edit(CourseMaterial $material)
@@ -51,13 +51,13 @@ class CourseMaterialController extends Controller
         ]);
 
         CourseMaterial::create($request->all());
-        return redirect()->route('courseMaterials.index')->with('success', 'Materi "' . $material->title . '" berhasil diperbarui!');
+        return redirect()->route('materials.index')->with('success', 'Materi "' . $material->title . '" berhasil diperbarui!');
     }
 
     public function destroy(CourseMaterial $material)
     {
         $title = $material->title;
         $material->delete();
-        return redirect()->route('courseMaterials.index')->with('success', 'Materi "' . $title . '" berhasil dihapus!');
+        return redirect()->route('materials.index')->with('success', 'Materi "' . $title . '" berhasil dihapus!');
     }
 }
