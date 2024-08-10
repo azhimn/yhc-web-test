@@ -29,7 +29,7 @@ class CourseController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'required|text|max:65535',
+            'description' => 'required|string|max:65535',
             'duration' => 'required|integer|max:1000',
         ]);
 
@@ -44,14 +44,14 @@ class CourseController extends Controller
 
     public function edit(Course $course)
     {
-        return view('admin.courses.edit', compact('course'));
+        return view('admin.course.edit', compact('course'));
     }
 
     public function update(Request $request, Course $course)
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'required|text|max:65535',
+            'description' => 'required|string|max:65535',
             'duration' => 'required|integer|max:1000',
         ]);
 

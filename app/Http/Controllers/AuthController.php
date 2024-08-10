@@ -12,7 +12,7 @@ class AuthController extends Controller
 {
     public function showRegisterPage()
     {
-        return view('auth.register');
+        return view('adminlte::auth.register');
     }
 
     public function register(Request $request)
@@ -32,12 +32,12 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('home')->with('success', 'Registrasi berhasil!');
+        return redirect()->route('login.show')->with('success', 'Registrasi berhasil!');
     }
 
     public function showLoginPage()
     {
-        return view('auth.login');
+        return view('adminlte::auth.login');
     }
 
     public function login(Request $request)
@@ -48,7 +48,7 @@ class AuthController extends Controller
         ]);
 
         if (Auth::attempt($request->only('email', 'password'))) {
-            return redirect()->route('home')->with('success', 'Login berhasil!');
+            return redirect()->route('courses.index')->with('success', 'Login berhasil!');
         }
 
         throw ValidationException::withMessages([
@@ -59,6 +59,6 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('home')->with('success', 'Logout berhasil!');
+        return redirect()->route('login.show')->with('success', 'Logout berhasil!');
     }
 }

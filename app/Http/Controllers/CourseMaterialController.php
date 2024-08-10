@@ -29,8 +29,8 @@ class CourseMaterialController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'required|text|max:65535',
-            'embed_link' => 'required|string|max:255',
+            'description' => 'required|string|max:65535',
+            'embed_link' => 'required|string|max:500',
             'course_id' => 'required|integer'
         ]);
 
@@ -41,20 +41,20 @@ class CourseMaterialController extends Controller
             'course_id' => $request->course_id,
         ]);
 
-        return redirect()->route('materials.index')->with('success', 'Materi "' . $material->title . '" berhasil dibuat!');
+        return redirect()->route('courses.show', $request->course_id)->with('success', 'Materi "' . $material->title . '" berhasil dibuat!');
     }
 
     public function edit(CourseMaterial $material)
     {
-        return view('admin.materials.edit', compact('material'));
+        return view('admin.material.edit', compact('material'));
     }
 
     public function update(Request $request, CourseMaterial $material)
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'required|text|max:65535',
-            'embed_link' => 'required|string|max:255',
+            'description' => 'required|string|max:65535',
+            'embed_link' => 'required|string|max:500',
             'course_id' => 'required|integer'
         ]);
 
@@ -65,14 +65,14 @@ class CourseMaterialController extends Controller
             'course_id' => $request->course_id,
         ]);
 
-        return redirect()->route('materials.index')->with('success', 'Materi "' . $material->title . '" berhasil diperbarui!');
+        return redirect()->route('courses.show', $material->course_id)->with('success', 'Materi "' . $material->title . '" berhasil diperbarui!');
     }
 
     public function destroy(CourseMaterial $material)
     {
         $title = $material->title;
         $material->delete();
-        return redirect()->route('materials.index')->with('success', 'Materi "' . $title . '" berhasil dihapus!');
+        return redirect()->route('courses.show', $material->course)->with('success', 'Materi "' . $title . '" berhasil dihapus!');
     }
 
     protected $purifier;

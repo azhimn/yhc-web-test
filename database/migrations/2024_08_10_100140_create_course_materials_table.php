@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->string('embed_link');
+            $table->string('embed_link', 500);
             $table->foreignId('course_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
