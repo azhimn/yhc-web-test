@@ -38,3 +38,15 @@ This is a repository made for fulfilling "MSIB 7 - Yayasan Hasnur Centre - Web D
     ```
     php artisan serve
     ```
+
+## User Login
+You can login by using the following credentials.
+
+Email
+```
+ardinug@mail.com
+```
+Password
+```
+password
+```
