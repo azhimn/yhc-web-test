@@ -1,3 +1,7 @@
+This is a repository made for fulfilling "MSIB 7 - Yayasan Hasnur Centre - Web Developer - Digitaliz" selection test.
+
+[Laravel](https://laravel.com/) 11 & [LAMP stack](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) is used for making this project.
+
 ## Requirements
 - [PHP](https://www.php.net/) >= 8.2
 - Webserver of choice *([Apache](https://apache.org) 2.4 used during development)*
