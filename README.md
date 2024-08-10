@@ -7,30 +7,30 @@
 ## Installation
 
 1. Clone this repository
-```
-git clone https://github.com/azhimn/yhc-webdev-test.git
-```
+    ```
+    git clone https://github.com/azhimn/yhc-webdev-test.git
+    ```
 
 2. Initialize the project
-```
-cd yhc-webdev-test
-composer install 
-```
+    ```
+    cd yhc-webdev-test
+    composer install 
+    ```
 
 3. Configure your environment
 
     Configure .env file to fit your environment. Use text editor of your choice *([vim](https://www.vim.org) is used here)* to edit environment variables such as database     information, app environment, and its base URL.
-```
-cp .env.example .env
-vim .env
-```
+    ```
+    cp .env.example .env
+    vim .env
+    ```
 
 5. Run the migrations
-```
-php artisan migrate --seed
-```
+    ```
+    php artisan migrate --seed
+    ```
 
 6. Run the app
-```
-php artisan serve
-```
+    ```
+    php artisan serve
+    ```
